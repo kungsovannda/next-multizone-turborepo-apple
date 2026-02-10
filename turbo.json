@@ -1,8 +1,10 @@
 {
   "$schema": "https://turborepo.dev/schema.json",
   "ui": "tui",
+
   "tasks": {
     "build": {
+      "env": ["MAC_DOMAIN", "IPAD_DOMAIN", "IPHONE_DOMAIN"],
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": [".next/**", "!.next/cache/**"]
