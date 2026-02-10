@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Footer() {
   return (
     <footer className="bg-[#f5f5f7] text-[#1d1d1f]">
@@ -59,9 +57,9 @@ export default function Footer() {
           </p>
           <p>
             Learn more about how Apple Card applications are evaluated at{" "}
-            <Link href="#" className="text-[#06c] hover:underline">
+            <a href="#" className="text-[#06c] hover:underline">
               support.apple.com/kb/HT209218
-            </Link>
+            </a>
             .
           </p>
           <p>
@@ -74,90 +72,90 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Footer Links Grid */}
+        {/* Footer as Grid */}
         <div className="grid grid-cols-5 gap-8 py-8 border-t border-[#d2d2d7]">
           {/* Shop and Learn */}
           <div>
             <h3 className="text-xs font-semibold mb-3">Shop and Learn</h3>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Store
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Mac
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   iPad
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   iPhone
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Watch
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Vision
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   AirPods
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   TV & Home
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   AirTag
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Accessories
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Gift Cards
-                </Link>
+                </a>
               </li>
             </ul>
 
             <h3 className="text-xs font-semibold mt-6 mb-3">Apple Wallet</h3>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Wallet
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Apple Card
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Apple Pay
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Apple Cash
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -167,68 +165,68 @@ export default function Footer() {
             <h3 className="text-xs font-semibold mb-3">Account</h3>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Manage Your Apple Account
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Apple Store Account
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   iCloud.com
-                </Link>
+                </a>
               </li>
             </ul>
 
             <h3 className="text-xs font-semibold mt-6 mb-3">Entertainment</h3>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Apple One
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Apple TV+
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Apple Music
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Apple Arcade
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Apple Fitness+
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Apple News+
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Apple Podcasts
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Apple Books
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   App Store
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -238,64 +236,64 @@ export default function Footer() {
             <h3 className="text-xs font-semibold mb-3">Apple Store</h3>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Find a Store
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Genius Bar
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Today at Apple
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Group Reservations
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Apple Camp
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Apple Store App
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Certified Refurbished
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Apple Trade In
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Financing
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Carrier Deals at Apple
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Order Status
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Shopping Help
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -305,66 +303,66 @@ export default function Footer() {
             <h3 className="text-xs font-semibold mb-3">For Business</h3>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Apple and Business
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Shop for Business
-                </Link>
+                </a>
               </li>
             </ul>
 
             <h3 className="text-xs font-semibold mt-6 mb-3">For Education</h3>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Apple and Education
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Shop for K-12
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Shop for College
-                </Link>
+                </a>
               </li>
             </ul>
 
             <h3 className="text-xs font-semibold mt-6 mb-3">For Healthcare</h3>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Apple and Healthcare
-                </Link>
+                </a>
               </li>
             </ul>
 
             <h3 className="text-xs font-semibold mt-6 mb-3">For Government</h3>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Apple and Government
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Shop for Veterans and Military
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Shop for State and Local Employees
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Shop for Federal Employees
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -374,78 +372,78 @@ export default function Footer() {
             <h3 className="text-xs font-semibold mb-3">Apple Values</h3>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Accessibility
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Education
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Environment
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Inclusion and Diversity
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Privacy
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Racial Equity and Justice
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Supply Chain Innovation
-                </Link>
+                </a>
               </li>
             </ul>
 
             <h3 className="text-xs font-semibold mt-6 mb-3">About Apple</h3>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Newsroom
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Apple Leadership
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Career Opportunities
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Investors
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Ethics & Compliance
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Events
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="#" className="text-[#424245] hover:underline">
+                <a href="#" className="text-[#424245] hover:underline">
                   Contact Apple
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -455,48 +453,48 @@ export default function Footer() {
         <div className="py-4 border-t border-[#d2d2d7] text-xs text-[#6e6e73]">
           <p>
             More ways to shop:{" "}
-            <Link href="#" className="text-[#06c] hover:underline">
+            <a href="#" className="text-[#06c] hover:underline">
               Find an Apple Store
-            </Link>{" "}
+            </a>{" "}
             or{" "}
-            <Link href="#" className="text-[#06c] hover:underline">
+            <a href="#" className="text-[#06c] hover:underline">
               other retailer
-            </Link>{" "}
+            </a>{" "}
             near you. Or call{" "}
-            <Link
+            <a
               href="tel:1-800-MY-APPLE"
               className="text-[#06c] hover:underline"
             >
               1-800-MY-APPLE
-            </Link>{" "}
+            </a>{" "}
             (1-800-692-7753).
           </p>
         </div>
 
-        {/* Bottom Links */}
+        {/* Bottom as */}
         <div className="py-4 border-t border-[#d2d2d7] flex justify-between items-center text-xs text-[#6e6e73]">
           <div className="flex items-center space-x-3">
             <p>Copyright © 2026 Apple Inc. All rights reserved.</p>
             <span className="text-[#d2d2d7]">|</span>
-            <Link href="#" className="hover:underline">
+            <a href="#" className="hover:underline">
               Privacy Policy
-            </Link>
+            </a>
             <span className="text-[#d2d2d7]">|</span>
-            <Link href="#" className="hover:underline">
+            <a href="#" className="hover:underline">
               Terms of Use
-            </Link>
+            </a>
             <span className="text-[#d2d2d7]">|</span>
-            <Link href="#" className="hover:underline">
+            <a href="#" className="hover:underline">
               Sales and Refunds
-            </Link>
+            </a>
             <span className="text-[#d2d2d7]">|</span>
-            <Link href="#" className="hover:underline">
+            <a href="#" className="hover:underline">
               Legal
-            </Link>
+            </a>
             <span className="text-[#d2d2d7]">|</span>
-            <Link href="#" className="hover:underline">
+            <a href="#" className="hover:underline">
               Site Map
-            </Link>
+            </a>
           </div>
           <div>
             <button className="hover:underline">United States</button>
