@@ -8,45 +8,45 @@ const nextConfig: NextConfig = {
        */
       {
         source: "/mac",
-        destination: "http://localhost:3001",
+        destination: `${process.env.MAC_DOMAIN}`,
       },
       {
         source: "/mac/:path*",
-        destination: "http://localhost:3001/:path*",
+        destination: `${process.env.MAC_DOMAIN}/:path*`,
       },
       {
         source: "/mac-static/:path*",
-        destination: "http://localhost:3001/mac-static/:path*",
+        destination: `${process.env.MAC_DOMAIN}/mac-static/:path*`,
       },
       /**
        * iPAD ROUTE
        */
       {
         source: "/ipad",
-        destination: "http://localhost:3002",
+        destination: `${process.env.IPAD_DOMAIN}`,
       },
       {
         source: "/ipad/:path*",
-        destination: "http://localhost:3002/:path*",
+        destination: `${process.env.IPAD_DOMAIN}/:path*`,
       },
       {
         source: "/ipad-static/:path*",
-        destination: "http://localhost:3002/ipad-static/:path*",
+        destination: `${process.env.IPAD_DOMAIN}/ipad-static/:path*`,
       },
       /**
        * iPHONE ROUTE
        */
       {
         source: "/iphone",
-        destination: "http://localhost:3003",
+        destination: `${process.env.IPHONE_DOMAIN}`,
       },
       {
         source: "/iphone/:path*",
-        destination: "http://localhost:3003/:path*",
+        destination: `${process.env.IPHONE_DOMAIN}/:path*`,
       },
       {
         source: "/iphone-static/:path*",
-        destination: "http://localhost:3003/iphone-static/:path*",
+        destination: `${process.env.IPHONE_DOMAIN}/iphone-static/:path*`,
       },
     ];
   },
