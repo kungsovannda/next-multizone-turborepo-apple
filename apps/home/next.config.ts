@@ -8,30 +8,22 @@ const nextConfig: NextConfig = {
        */
       {
         source: "/mac",
-        destination: `${process.env.MAC_DOMAIN}`,
+        destination: `${process.env.MAC_DOMAIN}/mac`,
       },
       {
         source: "/mac/:path*",
-        destination: `${process.env.MAC_DOMAIN}/:path*`,
-      },
-      {
-        source: "/mac-static/:path*",
-        destination: `${process.env.MAC_DOMAIN}/mac-static/:path*`,
+        destination: `${process.env.MAC_DOMAIN}/mac/:path*`,
       },
       /**
        * iPAD ROUTE
        */
       {
         source: "/ipad",
-        destination: `${process.env.IPAD_DOMAIN}`,
+        destination: `${process.env.IPAD_DOMAIN}/ipad`,
       },
       {
         source: "/ipad/:path*",
-        destination: `${process.env.IPAD_DOMAIN}/:path*`,
-      },
-      {
-        source: "/ipad-static/:path*",
-        destination: `${process.env.IPAD_DOMAIN}/ipad-static/:path*`,
+        destination: `${process.env.IPAD_DOMAIN}/ipad/:path*`,
       },
       /**
        * iPHONE ROUTE
@@ -42,11 +34,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/iphone/:path*",
-        destination: `${process.env.IPHONE_DOMAIN}/:path*`,
-      },
-      {
-        source: "/iphone-static/:path*",
-        destination: `${process.env.IPHONE_DOMAIN}/iphone-static/:path*`,
+        destination: `${process.env.IPHONE_DOMAIN}/iphone/:path*`,
       },
     ];
   },
