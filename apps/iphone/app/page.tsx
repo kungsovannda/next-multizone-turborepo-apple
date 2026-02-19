@@ -1,7 +1,22 @@
-import Image from "next/image";
+"use client";
+import { ProductCardProps } from "@repo/ui/components/product/product-card";
+import ProductCard from "@repo/ui/components/product/product-card";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [products, setProducts] = useState<ProductCardProps[] | null>([]);
+  
+  useEffect(() => {
+    const fetcher = () => {
+      fetch("/api/v1/products").then(res => res.json()).then((data) => {
+        setProducts(data);
+      })
+    }
+
+
+    fetcher()
+  }, [])
   return (
     <div className="bg-white">
       {/* Top Navigation Tabs - iPhone Models */}
@@ -104,117 +119,16 @@ export default function Home() {
       </section>
 
       {/* Explore the Lineup Section */}
-      <section className="py-16">
+      {/* Mac Lineup Grid */}
+      <section className="pb-16">
         <div className="max-w-[980px] mx-auto px-8">
-          <div className="flex justify-between items-center mb-12">
-            <h2 className="text-4xl font-semibold text-[#1d1d1f]">
-              Explore the lineup.
-            </h2>
-            <Link href="#" className="text-[#06c] text-lg hover:underline">
-              Compare all models
-            </Link>
-          </div>
-
           <div className="grid grid-cols-4 gap-6">
-            {/* iPhone 16 Pro */}
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-amber-50 to-orange-100 rounded-[28px] p-8 mb-4 aspect-[3/4] flex items-center justify-center relative overflow-hidden">
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <div className="w-28 h-56 bg-gradient-to-b from-orange-400 to-orange-600 rounded-[40px] shadow-2xl"></div>
-                </div>
-              </div>
-              <p className="text-xs text-[#bf4800] font-semibold mb-1">New</p>
-              <h3 className="text-2xl font-semibold text-[#1d1d1f] mb-2">
-                iPhone 16 Pro
-              </h3>
-              <p className="text-sm text-[#1d1d1f] mb-1">
-                The ultimate iPhone.
-              </p>
-              <p className="text-sm text-[#86868b] mb-4">
-                From $999 or $41.62/mo. for 24 mo.*
-              </p>
-              <button className="bg-[#0071e3] text-white text-sm px-5 py-2 rounded-full hover:bg-[#0077ed] transition-colors mb-2">
-                Buy
-              </button>
-              <div className="mt-2">
-                <Link href="#" className="text-[#06c] text-sm hover:underline">
-                  Learn more
-                </Link>
-              </div>
-            </div>
-
-            {/* iPhone 16 */}
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-[28px] p-8 mb-4 aspect-[3/4] flex items-center justify-center relative overflow-hidden">
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <div className="w-28 h-56 bg-gradient-to-b from-blue-300 to-blue-500 rounded-[40px] shadow-2xl"></div>
-                </div>
-              </div>
-              <p className="text-xs text-[#bf4800] font-semibold mb-1">New</p>
-              <h3 className="text-2xl font-semibold text-[#1d1d1f] mb-2">
-                iPhone 16
-              </h3>
-              <p className="text-sm text-[#1d1d1f] mb-1">A total powerhouse.</p>
-              <p className="text-sm text-[#86868b] mb-4">
-                From $799 or $33.29/mo. for 24 mo.*
-              </p>
-              <button className="bg-[#0071e3] text-white text-sm px-5 py-2 rounded-full hover:bg-[#0077ed] transition-colors mb-2">
-                Buy
-              </button>
-              <div className="mt-2">
-                <Link href="#" className="text-[#06c] text-sm hover:underline">
-                  Learn more
-                </Link>
-              </div>
-            </div>
-
-            {/* iPhone 15 */}
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-[28px] p-8 mb-4 aspect-[3/4] flex items-center justify-center relative overflow-hidden">
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <div className="w-28 h-56 bg-gradient-to-b from-purple-400 to-purple-600 rounded-[40px] shadow-2xl"></div>
-                </div>
-              </div>
-              <h3 className="text-2xl font-semibold text-[#1d1d1f] mb-2">
-                iPhone 15
-              </h3>
-              <p className="text-sm text-[#1d1d1f] mb-1">A great value.</p>
-              <p className="text-sm text-[#86868b] mb-4">
-                From $699 or $29.12/mo. for 24 mo.*
-              </p>
-              <button className="bg-[#0071e3] text-white text-sm px-5 py-2 rounded-full hover:bg-[#0077ed] transition-colors mb-2">
-                Buy
-              </button>
-              <div className="mt-2">
-                <Link href="#" className="text-[#06c] text-sm hover:underline">
-                  Learn more
-                </Link>
-              </div>
-            </div>
-
-            {/* iPhone 14 */}
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-[28px] p-8 mb-4 aspect-[3/4] flex items-center justify-center relative overflow-hidden">
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <div className="w-28 h-56 bg-gradient-to-b from-indigo-400 to-indigo-700 rounded-[40px] shadow-2xl"></div>
-                </div>
-              </div>
-              <h3 className="text-2xl font-semibold text-[#1d1d1f] mb-2">
-                iPhone 14
-              </h3>
-              <p className="text-sm text-[#1d1d1f] mb-1">As amazing as ever.</p>
-              <p className="text-sm text-[#86868b] mb-4">
-                From $599 or $24.95/mo. for 24 mo.*
-              </p>
-              <button className="bg-[#0071e3] text-white text-sm px-5 py-2 rounded-full hover:bg-[#0077ed] transition-colors mb-2">
-                Buy
-              </button>
-              <div className="mt-2">
-                <Link href="#" className="text-[#06c] text-sm hover:underline">
-                  Learn more
-                </Link>
-              </div>
-            </div>
+            {/* MacBook Air M3 24" */}
+            {
+              products?.filter(f=>f.category==='iphone').map((p, index) => (
+                <ProductCard key={index} {...p}/>
+              ))
+            }
           </div>
         </div>
       </section>

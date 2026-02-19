@@ -1,9 +1,9 @@
+import StoreProvider from "@repo/store/provider";
+import Footer from "@repo/ui/footer";
+import Navbar from "@repo/ui/nav-bar";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@repo/ui/nav-bar";
-import Footer from "@repo/ui/footer";
-import StoreProvider from "@repo/store/provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,8 +30,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <StoreProvider>
-          <Navbar />
+        <StoreProvider >
+          <Navbar isFixed />
           {children}
           <Footer />
         </StoreProvider>

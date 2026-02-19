@@ -1,10 +1,24 @@
 "use client";
 import { useAppSelector } from "@repo/store/hooks";
+import { use, useEffect, useState } from "react";
+import { CartDrawer } from "./components/cart/cart-sidebar";
+import { UserDrawer } from "./components/user/user-drawer";
 
-export default function Navbar() {
+export default function Navbar({isFixed} : {isFixed?: boolean}) {
   const { itemCount } = useAppSelector((state) => state.cart);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  
+  useEffect(() => {
+    const fetcher = () => {
+      fetch("/api/auth/is-authenticated").then(res => res.json()).then(data => setIsAuthenticated(data.isAuthenticated))
+    }
+
+    fetcher();
+  }, [])
+
   return (
-    <nav className="bg-white/70 backdrop-blur-2xl fixed w-full to-0 z-50">
+    <nav className={`bg-white/70 backdrop-blur-2xl  w-full to-0 z-50 ${isFixed ? "fixed" : ""}`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-center h-11 gap-10 text-black">
           <a
@@ -29,8 +43,10 @@ export default function Navbar() {
           <a href="/iphone" className="text-xs font-normal">
             iPhone
           </a>
-          <a
-            href="/"
+          {
+            isAuthenticated ? (<div className="flex justify-center items-center gap-2">
+              <button
+            onClick={() => setIsOpen(true)}
             className="text-white hover:text-white/80 transition-colors duration-200 relative"
             aria-label="Home"
           >
@@ -47,9 +63,14 @@ export default function Navbar() {
                 {itemCount}
               </span>
             )}
-          </a>
+          </button> <UserDrawer/>
+              </div>) : (<a className="text-xs font-normal" href="/oauth2/authorization/itp-frontbff">Login</a>)
+          }
         </div>
       </div>
+      
+        <CartDrawer open={isOpen} onOpenChange={setIsOpen}/>
+      
     </nav>
   );
 }

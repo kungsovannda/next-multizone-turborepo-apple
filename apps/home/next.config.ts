@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   async rewrites() {
     return [
+      
       /**
        * MAC ROUTE
        */
@@ -35,7 +36,7 @@ const nextConfig: NextConfig = {
       {
         source: "/iphone/:path*",
         destination: `${process.env.IPHONE_DOMAIN}/iphone/:path*`,
-      },
+      }
     ];
   },
 };

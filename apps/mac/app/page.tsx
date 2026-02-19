@@ -1,7 +1,22 @@
-import Image from "next/image";
+"use client";
+import { ProductCardProps } from "@repo/ui/components/product/product-card";
+import ProductCard from "@repo/ui/components/product/product-card";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [products, setProducts] = useState<ProductCardProps[] | null>([]);
+  
+  useEffect(() => {
+    const fetcher = () => {
+      fetch("/api/v1/products").then(res => res.json()).then((data) => {
+        setProducts(data);
+      })
+    }
+
+
+    fetcher()
+  }, [])
   return (
     <div className="bg-white">
       {/* Top Navigation Tabs - Mac Models */}
@@ -62,120 +77,11 @@ export default function Home() {
         <div className="max-w-[980px] mx-auto px-8">
           <div className="grid grid-cols-4 gap-6">
             {/* MacBook Air M3 24" */}
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-[28px] p-8 mb-4 aspect-[3/4] flex items-center justify-center relative overflow-hidden">
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <div
-                    className="w-40 h-24 bg-gradient-to-b from-gray-700 to-gray-900 rounded-lg shadow-2xl"
-                    style={{
-                      clipPath: "polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%)",
-                    }}
-                  ></div>
-                </div>
-              </div>
-              <p className="text-xs text-[#bf4800] font-semibold mb-1">New</p>
-              <h3 className="text-2xl font-semibold text-[#1d1d1f] mb-1">
-                MacBook Air 15
-              </h3>
-              <p className="text-xs text-[#86868b] mb-1">M3</p>
-              <p className="text-sm text-[#1d1d1f] mb-1">
-                Lean. Mean. M3 machine.
-              </p>
-              <p className="text-sm text-[#86868b] mb-4">
-                From $1099 or $91.58/mo. for 12 mo.*
-              </p>
-              <button className="bg-[#0071e3] text-white text-sm px-5 py-2 rounded-full hover:bg-[#0077ed] transition-colors mb-2">
-                Buy
-              </button>
-              <div className="mt-2">
-                <Link href="#" className="text-[#06c] text-sm hover:underline">
-                  Learn more
-                </Link>
-              </div>
-            </div>
-
-            {/* MacBook Pro 14" and 16" */}
-            <div className="text-center">
-              <div className="bg-black bg-center bg-cover bg-no-repeat  bg-[url(https://www.apple.com/assets-www/en_WW/mac/01_product_tile/large/mba_13_15_75c30cc7c.jpg)] rounded-[28px] p-8 mb-4 aspect-3/4 flex items-center justify-center relative overflow-hidden"></div>
-              <p className="text-xs text-[#bf4800] font-semibold mb-1">New</p>
-              <h3 className="text-2xl font-semibold text-[#1d1d1f] mb-1">
-                MacBook Pro 14
-              </h3>
-              <p className="text-xs text-[#86868b] mb-1">
-                M4, M4 Pro, and M4 Max
-              </p>
-              <p className="text-sm text-[#1d1d1f] mb-1">A work of smart.</p>
-              <p className="text-sm text-[#86868b] mb-4">
-                From $1599 or $133.25/mo. for 12 mo.*
-              </p>
-              <button className="bg-[#0071e3] text-white text-sm px-5 py-2 rounded-full hover:bg-[#0077ed] transition-colors mb-2">
-                Buy
-              </button>
-              <div className="mt-2">
-                <Link href="#" className="text-[#06c] text-sm hover:underline">
-                  Learn more
-                </Link>
-              </div>
-            </div>
-
-            {/* iMac */}
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 rounded-[28px] p-8 mb-4 aspect-[3/4] flex items-center justify-center relative overflow-hidden">
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <div className="relative">
-                    <div className="w-32 h-24 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-t-lg"></div>
-                    <div className="w-32 h-2 bg-gray-300 rounded-b-lg"></div>
-                  </div>
-                </div>
-              </div>
-              <p className="text-xs text-[#bf4800] font-semibold mb-1">New</p>
-              <h3 className="text-2xl font-semibold text-[#1d1d1f] mb-1">
-                iMac
-              </h3>
-              <p className="text-xs text-[#86868b] mb-1">M4</p>
-              <p className="text-sm text-[#1d1d1f] mb-1">
-                A stunning standout.
-              </p>
-              <p className="text-sm text-[#86868b] mb-4">
-                From $1299 or $108.25/mo. for 12 mo.*
-              </p>
-              <button className="bg-[#0071e3] text-white text-sm px-5 py-2 rounded-full hover:bg-[#0077ed] transition-colors mb-2">
-                Buy
-              </button>
-              <div className="mt-2">
-                <Link href="#" className="text-[#06c] text-sm hover:underline">
-                  Learn more
-                </Link>
-              </div>
-            </div>
-
-            {/* Mac mini */}
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-[28px] p-8 mb-4 aspect-[3/4] flex items-center justify-center relative overflow-hidden">
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <div className="w-24 h-6 bg-gradient-to-b from-gray-300 to-gray-400 rounded-lg shadow-xl"></div>
-                </div>
-              </div>
-              <p className="text-xs text-[#bf4800] font-semibold mb-1">New</p>
-              <h3 className="text-2xl font-semibold text-[#1d1d1f] mb-1">
-                Mac mini
-              </h3>
-              <p className="text-xs text-[#86868b] mb-1">M4 and M4 Pro</p>
-              <p className="text-sm text-[#1d1d1f] mb-1">
-                Mighty. Mini. Magic.
-              </p>
-              <p className="text-sm text-[#86868b] mb-4">
-                From $599 or $49.91/mo. for 12 mo.*
-              </p>
-              <button className="bg-[#0071e3] text-white text-sm px-5 py-2 rounded-full hover:bg-[#0077ed] transition-colors mb-2">
-                Buy
-              </button>
-              <div className="mt-2">
-                <Link href="#" className="text-[#06c] text-sm hover:underline">
-                  Learn more
-                </Link>
-              </div>
-            </div>
+            {
+              products?.filter(f=>f.category==='mac').map((p, index) => (
+                <ProductCard key={index} {...p}/>
+              ))
+            }
           </div>
         </div>
       </section>

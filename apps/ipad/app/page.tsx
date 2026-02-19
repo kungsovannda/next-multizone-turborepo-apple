@@ -1,7 +1,22 @@
-import Image from "next/image";
+"use client";
+import { ProductCardProps } from "@repo/ui/components/product/product-card";
+import ProductCard from "@repo/ui/components/product/product-card";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [products, setProducts] = useState<ProductCardProps[] | null>([]);
+  
+  useEffect(() => {
+    const fetcher = () => {
+      fetch("/api/v1/products").then(res => res.json()).then((data) => {
+        setProducts(data);
+      })
+    }
+
+
+    fetcher()
+  }, [])
   return (
     <div className="bg-white">
       {/* Top Navigation Tabs - iPad Models */}
@@ -46,117 +61,19 @@ export default function Home() {
           <h1 className="text-6xl font-semibold text-[#1d1d1f] mb-16">iPad</h1>
 
           {/* iPad Models Grid */}
-          <div className="grid grid-cols-4 gap-6 mb-20">
-            {/* iPad Pro */}
-            <div className="text-center">
-              <div className="bg-black rounded-[28px] p-8 mb-4 aspect-[3/4] flex items-center justify-center relative overflow-hidden">
-                <div className="relative w-full h-full">
-                  {/* Simulated iPad Pro display with colorful lines */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="space-y-3">
-                      <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"></div>
-                      <div className="h-1 w-40 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full"></div>
-                      <div className="h-1 w-36 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
-                      <div className="h-1 w-32 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <p className="text-xs text-[#bf4800] font-semibold mb-1">New</p>
-              <h3 className="text-2xl font-semibold text-[#1d1d1f] mb-2">
-                iPad Pro
-              </h3>
-              <p className="text-sm text-[#1d1d1f] mb-1">
-                The ultimate iPad experience
-              </p>
-              <p className="text-sm text-[#1d1d1f] mb-1">
-                with the most advanced technology.
-              </p>
-              <p className="text-sm text-[#86868b] mb-4">
-                From $999 or $83.25/mo. for 12 mo.*
-              </p>
-              <button className="bg-[#0071e3] text-white text-sm px-5 py-2 rounded-full hover:bg-[#0077ed] transition-colors">
-                Buy
-              </button>
-            </div>
-
-            {/* iPad Air */}
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-[28px] p-8 mb-4 aspect-[3/4] flex items-center justify-center relative overflow-hidden">
-                <div className="relative w-full h-full">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-32 h-32 border-4 border-blue-400 rounded-3xl transform rotate-12"></div>
-                  </div>
-                </div>
-              </div>
-              <p className="text-xs text-[#bf4800] font-semibold mb-1">New</p>
-              <h3 className="text-2xl font-semibold text-[#1d1d1f] mb-2">
-                iPad Air
-              </h3>
-              <p className="text-sm text-[#1d1d1f] mb-1">
-                Serious performance in a
-              </p>
-              <p className="text-sm text-[#1d1d1f] mb-1">
-                thin and light design.
-              </p>
-              <p className="text-sm text-[#86868b] mb-4">
-                From $599 or $49.91/mo. for 12 mo.*
-              </p>
-              <button className="bg-[#0071e3] text-white text-sm px-5 py-2 rounded-full hover:bg-[#0077ed] transition-colors">
-                Buy
-              </button>
-            </div>
-
-            {/* iPad */}
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-[28px] p-8 mb-4 aspect-[3/4] flex items-center justify-center relative overflow-hidden">
-                <div className="relative w-full h-full">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-28 h-40 bg-gradient-to-br from-pink-400 via-purple-400 to-blue-400 rounded-2xl"></div>
-                  </div>
-                </div>
-              </div>
-              <h3 className="text-2xl font-semibold text-[#1d1d1f] mb-2">
-                iPad
-              </h3>
-              <p className="text-sm text-[#1d1d1f] mb-1">
-                The colorful, all‑screen iPad
-              </p>
-              <p className="text-sm text-[#1d1d1f] mb-1">
-                for the things you do every day.
-              </p>
-              <p className="text-sm text-[#86868b] mb-4">
-                From $349 or $29.08/mo. for 12 mo.*
-              </p>
-              <button className="bg-[#0071e3] text-white text-sm px-5 py-2 rounded-full hover:bg-[#0077ed] transition-colors">
-                Buy
-              </button>
-            </div>
-
-            {/* iPad mini */}
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-[28px] p-8 mb-4 aspect-[3/4] flex items-center justify-center relative overflow-hidden">
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <div className="w-20 h-28 bg-gradient-to-br from-purple-500 via-pink-500 to-purple-600 rounded-xl transform -rotate-12"></div>
-                </div>
-              </div>
-              <h3 className="text-2xl font-semibold text-[#1d1d1f] mb-2">
-                iPad mini
-              </h3>
-              <p className="text-sm text-[#1d1d1f] mb-1">
-                The full iPad experience
-              </p>
-              <p className="text-sm text-[#1d1d1f] mb-1">
-                in an ultraportable design.
-              </p>
-              <p className="text-sm text-[#86868b] mb-4">
-                From $499 or $41.58/mo. for 12 mo.*
-              </p>
-              <button className="bg-[#0071e3] text-white text-sm px-5 py-2 rounded-full hover:bg-[#0077ed] transition-colors">
-                Buy
-              </button>
-            </div>
+          {/* Mac Lineup Grid */}
+      <section className="pb-16">
+        <div className="max-w-[980px] mx-auto px-8">
+          <div className="grid grid-cols-4 gap-6">
+            {/* MacBook Air M3 24" */}
+            {
+              products?.filter(f=>f.category==='ipad').map((p, index) => (
+                <ProductCard key={index} {...p}/>
+              ))
+            }
           </div>
+        </div>
+      </section>
         </div>
       </section>
 

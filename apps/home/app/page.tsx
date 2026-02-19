@@ -8,7 +8,7 @@ export default function Home() {
     e.preventDefault();
     dispatch(
       addToCart({
-        id: 1,
+        uuid: "1",
         description: "hellp",
         images: ["hello"],
         price: 100,
@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <div className="bg-white">
       {/* SECTION 1: iPhone 16 Pro - Full Width Hero Video */}
-      <section className="relative h-[92vh] w-full overflow-hidden bg-black text-white bg-top bg-contain bg-[url(https://www.apple.com/v/home/cl/images/heroes/iphone-family/hero_iphone_family__fuz5j2v5xx6y_mediumtall_2x.jpg)]">
+      <section className="relative h-[100vh] w-full overflow-hidden bg-black text-white bg-top bg-contain bg-[url(https://www.apple.com/v/home/cl/images/heroes/iphone-family/hero_iphone_family__fuz5j2v5xx6y_mediumtall_2x.jpg)]">
         <div className="relative z-10 flex flex-col items-center pt-14 text-center">
           <h2 className="text-4xl text-black md:text-6xl font-semibold tracking-tight">
             iPhone 16 Pro
@@ -45,7 +45,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 2: iPhone 16 - Secondary Hero */}
-      <section className="relative h-[80vh] w-full mt-3 overflow-hidden bg-[#f5f5f7] text-[#1d1d1f]">
+      <section className="relative h-[90vh] w-full mt-3 overflow-hidden bg-[#f5f5f7] text-[#1d1d1f]">
         <div className="relative z-10 flex flex-col items-center pt-14 text-center">
           <h2 className="text-4xl text-black md:text-6xl font-semibold tracking-tight mix-blend-difference">
             WATCH SERIES 11
@@ -75,22 +75,22 @@ export default function Home() {
         <div className="relative h-[580px] overflow-hidden bg-[#f5f5f7] rounded-none flex flex-col items-center text-center pt-12">
           <div className="z-10">
             <h3 className="text-3xl md:text-4xl font-semibold tracking-tight flex items-center justify-center">
-              <span className="mr-1">WATCH</span>{" "}
+              <span className="mr-1 text-white">WATCH</span>{" "}
               <span className="text-red-600 font-bold italic text-sm">
                 SERIES 10
               </span>
             </h3>
-            <p className="mt-2 text-lg">Thinner. Faster. Powerhouse.</p>
+            <p className="mt-2 text-white text-lg">Thinner. Faster. Powerhouse.</p>
             <div className="mt-4 flex gap-4 justify-center ">
               <a
                 href="#"
-                className="rounded-full bg-[#0071e3] px-6 py-3 font-semibold "
+                className="rounded-full bg-[#0071e3] px-6 py-3 font-semibold text-white"
               >
                 Learn more
               </a>
               <a
                 href="#"
-                className="rounded-full border border-[#0071e3] px-6 py-3 font-semibold "
+                className="rounded-full text-white border border-[#0071e3] px-6 py-3 font-semibold "
               >
                 Buy
               </a>
@@ -144,7 +144,7 @@ export default function Home() {
             <div className="mt-4 flex gap-4 justify-center ">
               <a
                 href="#"
-                className="rounded-full bg-[#0071e3] px-6 py-3 font-semibold "
+                className="rounded-full bg-[#0071e3] px-6 py-3 font-semibold text-white"
               >
                 Learn more
               </a>

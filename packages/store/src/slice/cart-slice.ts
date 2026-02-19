@@ -1,8 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 type Product = {
-  id: number;
+  uuid: string;
   title: string;
   price: number;
   images: string[];
@@ -11,7 +11,7 @@ type Product = {
 };
 
 type CartItem = {
-  id: number;
+  uuid: string;
   title: string;
   price: number;
   image: string;
@@ -37,12 +37,12 @@ const cartSlice = createSlice({
   reducers: {
     addToCart: (state, action: PayloadAction<Product>) => {
       const product = action.payload;
-      const existItem = state.items.find((item) => item.id === product.id);
+      const existItem = state.items.find((item) => item.uuid === product.uuid);
       if (existItem) {
         existItem.quantity += 1;
       } else {
         state.items.push({
-          id: product.id,
+          uuid: product.uuid,
           title: product.title,
           price: product.price,
           image: product.images[0] ?? "",
@@ -54,14 +54,14 @@ const cartSlice = createSlice({
     },
     updateQuantity: (
       state,
-      action: PayloadAction<{ id: number; quantity: number }>,
+      action: PayloadAction<{ uuid: string; quantity: number }>,
     ) => {
-      const { id, quantity } = action.payload;
-      const product = state.items.find((p) => p.id === id);
+      const { uuid, quantity } = action.payload;
+      const product = state.items.find((p) => p.uuid === uuid);
       if (product) {
         product.quantity = Math.max(0, quantity);
         if (product.quantity === 0) {
-          state.items = state.items.filter((p) => p.id !== id);
+          state.items = state.items.filter((p) => p.uuid !== uuid);
         }
       }
       cartSlice.caseReducers.calculateTotal(state);
@@ -76,9 +76,9 @@ const cartSlice = createSlice({
         0,
       );
     },
-    removeFromCart: (state, action: PayloadAction<{ id: number }>) => {
-      const { id } = action.payload;
-      state.items = state.items.filter((p) => p.id !== id);
+    removeFromCart: (state, action: PayloadAction<{ uuid: string }>) => {
+      const { uuid } = action.payload;
+      state.items = state.items.filter((p) => p.uuid !== uuid);
       cartSlice.caseReducers.calculateTotal(state);
     },
   },
